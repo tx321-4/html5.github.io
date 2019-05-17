@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5 canvas 渐变（径向渐变）</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #c3c3c3;">
+        您的浏览器不支持HTML5 canvas 标签
+    </canvas>
+    <script type="text/javascript">
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext('2d');
+    //createRadialGradient(x,y,r,x1,y1,r1) - 创建一个径向/圆渐变
+    var grd = ctx.createRadialGradient(75,50,5,90,60,100)
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,'white');
+
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,150,80);
+    </script>
+</body>
+</html>

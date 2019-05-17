@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML5 canvas</title>
+    <title>HTML5 canvas 绘制直线</title>
 </head>
 <body>
     <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #c3c3c3;">
@@ -13,8 +13,11 @@
     <script type="text/javascript">
     var c = document.getElementById('myCanvas');
     var ctx = c.getContext('2d');
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(0,0,150,75);
+    //moveTo(x,y) 定义线条开始坐标
+    //lineTo(x,y) 定义线条结束坐标
+    ctx.moveTo(0,0) ;
+    ctx.lineTo(200,100);
+    ctx.stroke();
     </script>
 </body>
 </html>

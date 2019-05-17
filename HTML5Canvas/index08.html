@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5 canvas 图片</title>
+</head>
+<body>
+   <p>Image to use:</p>
+   <img src="/images/timg.jpg" id="scream" alt="The dog" width="238" height="246">
+   <p>Canvas：</p>
+   <canvas id="myCanvas" width="250" height="300" style="border:1px solid #d3d3d3;">    
+    您的浏览器不支持 HTML5 canvas 标签。 
+   </canvas>
+   <script type="text/javascript">
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext("2d");
+    var img = document.getElementById('scream');
+
+    img.onload = function(){
+        ctx.drawImage(img,10,10);
+    }
+   </script>
+</body>
+</html>

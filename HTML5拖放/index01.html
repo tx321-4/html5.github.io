@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5 拖放</title>
+    <style>
+        #div1{width:350px;height:400px;padding:10px;border:1px solid #aaaaaa;}
+    </style>
+</head>
+<body>
+   <p>拖放 图片到矩形框中</p>
+   <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+   <br />
+   <img src="/images/timg.jpg" alt="" id="drag1" draggable="true" ondragstart="drag(event)" width="238" height="246" />
+   <script>
+       function allowDrop(ev){
+           ev.preventDefault();
+       }
+       function drag(ev){
+           ev.dataTransfer.setData('Text', ev.target.id);
+       }
+       function drop(ev){
+           ev.preventDefault();
+           var data = ev.dataTransfer.getData('Text');
+           ev.target.appendChild(document.getElementById(data));
+       }
+   </script>
+</body>
+</html>
